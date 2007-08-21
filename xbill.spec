@@ -1,6 +1,6 @@
 %define	name	xbill
 %define	version	2.1
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 %define	Summary	Defend your computers from Wingdows Viruses
 
 Name:		%{name}
@@ -92,6 +92,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_liconsdir}/%{name}.png
 %attr(0664,root,games) %{_localstatedir}/games/xbill/scores
 %{_datadir}/applications/mandriva-%{name}.desktop
-
-* Tue Dec 14 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 2.1-1mdk
-- initial(?) mdk relase
