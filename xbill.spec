@@ -12,7 +12,6 @@ Url:		http://www.xbill.org/
 Summary:	%{Summary}
 License:	GPL
 BuildRequires:	X11-devel Xaw3d-devel ImageMagick
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Ever get the feeling that nothing is going right?  You're a sysadmin,
