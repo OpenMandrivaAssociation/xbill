@@ -41,16 +41,6 @@ to run off the screen with your vital software..
 rm -rf $RPM_BUILD_ROOT
 %{makeinstall_std}
 
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat <<EOF >$RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		icon=%{name}.png \
-		needs="x11" \
-		section="More Applications/Games/Arcade" \
-		title="XBill" \
-		longtitle="%{Summary}" \
-        xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -85,7 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}
 %{_mandir}/man6/xbill.6*
-%{_menudir}/%{name}
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
