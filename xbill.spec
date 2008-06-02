@@ -34,7 +34,7 @@ to run off the screen with your vital software..
 %configure	--disable-gtk \
 		--bindir=%{_gamesbindir} \
 		--datadir=%{_gamesdatadir} \
-		--localstatedir=%{_localstatedir}/games
+		--localstatedir=%{_localstatedir}/lib/games
 %make
 
 %install
@@ -78,5 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
-%attr(0664,root,games) %{_localstatedir}/games/xbill/scores
+%attr(0664,root,games) %{_localstatedir}/lib/games/xbill/scores
 %{_datadir}/applications/mandriva-%{name}.desktop
