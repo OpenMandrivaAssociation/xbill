@@ -11,7 +11,7 @@ Source0:	%{name}-%{version}.tar.bz2
 Url:		http://www.xbill.org/
 Summary:	%{Summary}
 License:	GPL
-BuildRequires:	X11-devel Xaw3d-devel ImageMagick
+BuildRequires:	X11-devel Xaw3d-devel imagemagick
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
