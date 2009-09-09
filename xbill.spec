@@ -1,6 +1,6 @@
 %define	name	xbill
 %define	version	2.1
-%define	release	%mkrel 5
+%define	release	%mkrel 6
 %define	Summary	Defend your computers from Wingdows Viruses
 
 Name:		%{name}
