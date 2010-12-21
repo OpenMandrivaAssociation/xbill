@@ -1,6 +1,6 @@
 %define	name	xbill
 %define	version	2.1
-%define	release	%mkrel 6
+%define	release	%mkrel 7
 %define	Summary	Defend your computers from Wingdows Viruses
 
 Name:		%{name}
@@ -11,7 +11,13 @@ Source0:	%{name}-%{version}.tar.bz2
 Url:		http://www.xbill.org/
 Summary:	%{Summary}
 License:	GPL
-BuildRequires:	X11-devel Xaw3d-devel imagemagick
+BuildRequires:	libx11-devel
+BuildRequires:	Xaw3d-devel
+BuildRequires:	libxpm-devel
+BuildRequires:	libxt-devel
+BuildRequires:	libxaw-devel
+BuildRequires:	lesstif-devel
+BuildRequires:	imagemagick
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -31,7 +37,7 @@ to run off the screen with your vital software..
 %setup -q
 
 %build
-%configure	--disable-gtk \
+%configure2_5x	--disable-gtk \
 		--bindir=%{_gamesbindir} \
 		--datadir=%{_gamesdatadir} \
 		--localstatedir=%{_localstatedir}/lib/games
@@ -40,7 +46,6 @@ to run off the screen with your vital software..
 %install
 rm -rf $RPM_BUILD_ROOT
 %{makeinstall_std}
-
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -51,7 +56,7 @@ Exec=%_gamesbindir/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame;
 EOF
 
 install -d $RPM_BUILD_ROOT{%{_iconsdir},%{_miconsdir},%{_liconsdir}}
