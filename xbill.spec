@@ -11,14 +11,13 @@ Source0:	%{name}-%{version}.tar.bz2
 Url:		http://www.xbill.org/
 Summary:	%{Summary}
 License:	GPL
-BuildRequires:	libx11-devel
+BuildRequires:	pkgconfig(x11)
 BuildRequires:	Xaw3d-devel
 BuildRequires:	libxpm-devel
-BuildRequires:	libxt-devel
+BuildRequires:	pkgconfig(xt)
 BuildRequires:	libxaw-devel
 BuildRequires:	lesstif-devel
 BuildRequires:	imagemagick
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Ever get the feeling that nothing is going right?  You're a sysadmin,
@@ -44,11 +43,11 @@ to run off the screen with your vital software..
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %{makeinstall_std}
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=XBill
 Comment=%{Summary}
@@ -59,29 +58,14 @@ Type=Application
 Categories=Game;ArcadeGame;
 EOF
 
-install -d $RPM_BUILD_ROOT{%{_iconsdir},%{_miconsdir},%{_liconsdir}}
-convert -size 16x16 %{name}.gif $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-convert -size 32x32 %{name}.gif $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-convert -size 48x48 %{name}.gif $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+install -d %{buildroot}{%{_iconsdir},%{_miconsdir},%{_liconsdir}}
+convert -size 16x16 %{name}.gif %{buildroot}%{_miconsdir}/%{name}.png
+convert -size 32x32 %{name}.gif %{buildroot}%{_iconsdir}/%{name}.png
+convert -size 48x48 %{name}.gif %{buildroot}%{_liconsdir}/%{name}.png
 
 %files
-%defattr(-,root,root)
 %doc README README.Ports ChangeLog
 %attr(2755,root,games) %{_gamesbindir}/%{name}
-%dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}
 %{_mandir}/man6/xbill.6*
 %{_miconsdir}/%{name}.png
