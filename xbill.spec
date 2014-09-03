@@ -8,7 +8,7 @@ Url:		http://www.xbill.org/
 License:	GPL
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	Xaw3d-devel
-BuildRequires:	libxpm-devel
+BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xt)
 BuildRequires:	libxaw-devel
 BuildRequires:	lesstif-devel
