@@ -1,15 +1,10 @@
-%define	name	xbill
-%define	version	2.1
-%define	release	%mkrel 7
-%define	Summary	Defend your computers from Wingdows Viruses
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Summary:	Defend your computers from Wingdows Viruses
+Name:		xbill
+Version:	2.1
+Release:	8
 Group:		Games/Arcade
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	http://www.xbill.org/download/%{name}-%{version}.tar.gz
 Url:		http://www.xbill.org/
-Summary:	%{Summary}
 License:	GPL
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	Xaw3d-devel
@@ -43,7 +38,6 @@ to run off the screen with your vital software..
 %make
 
 %install
-rm -rf %{buildroot}
 %{makeinstall_std}
 
 mkdir -p %{buildroot}%{_datadir}/applications
