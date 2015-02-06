@@ -1,7 +1,7 @@
 Summary:	Defend your computers from Wingdows Viruses
 Name:		xbill
 Version:	2.1
-Release:	8
+Release:	9
 Group:		Games/Arcade
 Source0:	http://www.xbill.org/download/%{name}-%{version}.tar.gz
 Url:		http://www.xbill.org/
