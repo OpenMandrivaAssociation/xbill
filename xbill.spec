@@ -4,7 +4,7 @@ Version:	2.1
 Release:	9
 Group:		Games/Arcade
 Source0:	http://www.xbill.org/download/%{name}-%{version}.tar.gz
-Url:		http://www.xbill.org/
+Url:		https://www.xbill.org/
 License:	GPL
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	Xaw3d-devel
