@@ -6,6 +6,11 @@ Group:		Games/Arcade
 Source0:	http://www.xbill.org/download/%{name}-%{version}.tar.gz
 Url:		https://www.xbill.org/
 License:	GPL
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	Xaw3d-devel
 BuildRequires:	pkgconfig(xpm)
